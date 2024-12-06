@@ -1,13 +1,39 @@
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { data_new } from "../data/data_news";
+import { useEffect, useState } from "react";
 const DetailPage = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const newsId = searchParams.get("newsid");
+  const news_id = searchParams.get("newsid");
   const name = searchParams.get("name");
   const type = searchParams.get("type");
-  const detail = data_new[0].type_new
-    .filter((i) => i.name === type)[0]
-    .news_type.filter((i) => i.id === Number(newsId))[0];
+  const number_id = Number(news_id);
+  const [detail, setDetail] = useState({
+    id: 0,
+    headline: "",
+    content: "",
+    date: "",
+    time: "",
+    category: "",
+    publisher: "",
+  });
+  // ดักพาร์ทกรณีที่พิมพ์มั่วหรือไม่มีข้อมูล
+  useEffect(() => {
+    const check_news_type = data_new[0].type_new.some(
+      (item) => item.name === type
+    );
+    const check_id_news = data_new[0].type_new.some(
+      (item) => item.id === number_id
+    );
+    if (!check_news_type || !check_id_news) {
+      navigate("/");
+    } else {
+      const detail_filter = data_new[0].type_new
+        .filter((i) => i.name === type)[0]
+        .news_type.filter((i) => i.id === Number(news_id))[0];
+      setDetail(detail_filter);
+    }
+  }, [news_id, name, type, navigate]);
   return (
     <>
       <div className="px-20 py-10 ">

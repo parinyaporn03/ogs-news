@@ -16,7 +16,7 @@ const ListBox = (item: ItemType) => {
     <>
       <div key={item.item.id} className="p-4 px-20 ">
         <div
-          className="rounded-xl shadow-2xl  p-4 border-black border-2 hover:bg-gray-100"
+          className="rounded-xl shadow-2xl  p-4 border-black border-2 hover:bg-gray-100 cursor-pointer"
           onClick={() =>
             navigation(
               `/detail?&type=${item.item.category}&newsid=${item.item.id}&name=Bam`

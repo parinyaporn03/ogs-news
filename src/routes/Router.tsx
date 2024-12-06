@@ -7,7 +7,7 @@ import NewsPage from "../pages/NewsPage";
 import DetailPage from "../pages/DetailPage";
 const Router = createBrowserRouter([
   {
-    path: "/",
+    index: true,
     element: <IndexPage />,
   },
   {
@@ -34,7 +34,7 @@ const Router = createBrowserRouter([
         element: <DetailPage />,
       },
       {
-        path: ":type/:id",
+        path: "news-type/:type/:id",
         element: <NewsPage />,
       },
     ],
