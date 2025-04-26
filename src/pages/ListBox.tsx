@@ -19,7 +19,7 @@ const ListBox = (item: ItemType) => {
           className="rounded-xl shadow-2xl  p-4 border-black border-2 hover:bg-gray-100 cursor-pointer"
           onClick={() =>
             navigation(
-              `/detail?&type=${item.item.category}&newsid=${item.item.id}&name=Bam`
+              `/ogs-news/detail?&type=${item.item.category}&newsid=${item.item.id}&name=Bam`
             )
           }
         >

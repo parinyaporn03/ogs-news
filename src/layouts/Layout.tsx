@@ -4,34 +4,34 @@ import { NavLink, Outlet } from "react-router-dom";
 function Layout() {
   const pathList = [
     {
-      path: "/home",
+      path: "/ogs-news/home",
       name: "หน้าหลัก",
     },
     {
-      path: "news-type/ข่าวทั้งหมด/0",
+      path: "/ogs-news/news-type/ข่าวทั้งหมด/0",
       name: "ข่าวทั้งหมด",
     },
     {
-      path: "news-type/ข่าวกีฬา/1",
+      path: "/ogs-news/news-type/ข่าวกีฬา/1",
       name: "ข่าวกีฬา",
     },
     {
-      path: "news-type/ข่าวการเมือง/2",
+      path: "/ogs-news/news-type/ข่าวการเมือง/2",
       name: "ข่าวการเมือง",
     },
     {
-      path: "news-type/ข่าวดารา/3",
+      path: "/ogs-news/news-type/ข่าวดารา/3",
       name: "ข่าวดารา",
     },
     {
-      path: "news-type/ข่าวทั่วไป/4",
+      path: "/ogs-news/news-type/ข่าวทั่วไป/4",
       name: "ข่าวทั่วไป",
     },
   ];
   return (
     <div>
       <nav className="bg-gray-300 flex justify-evenly pr-96 p-6 items-center text-[18px] ">
-        <NavLink to="/">
+        <NavLink to="/ogs-news">
           <img src={Logo} width={40} />
         </NavLink>
         {pathList.map((e) => (

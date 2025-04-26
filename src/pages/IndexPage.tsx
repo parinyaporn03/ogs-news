@@ -9,7 +9,7 @@ const IndexPage = () => {
           <div className="py-2 text-xl font-bold text-[#213547] ">
             ogs Daily News
           </div>
-          <Link to="/home">
+          <Link to="/ogs-news/home">
             <div className="w-fit p-2 px-5 rounded-xl text-white bg-[#213547] border-[#213547] border-2 hover:bg-white hover:text-black hover:border-2 ">
               เข้าสู่เว็บไซต์
             </div>
